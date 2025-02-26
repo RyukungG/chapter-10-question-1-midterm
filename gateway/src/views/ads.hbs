@@ -1,0 +1,85 @@
+<!-- ads.hbs -->
+<div class="ads-container">
+    <h2>Sponsored Ads</h2>
+    <div class="ads-list">
+        {{#each ads}}
+        <div class="ad-item">
+            <a href="{{this.url}}" target="_blank">
+                <img src="{{this.image}}" alt="{{this.name}}">
+                <p>{{this.name}}</p>
+            </a>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>FlixTube: Sponsored Ads</title>
+
+        <link rel="stylesheet" href="css/tailwind.min.css">
+        <link rel="stylesheet" href="css/app.css">
+    </head>
+    <body>
+        <div class="flex flex-col">
+            <div class="border-b-2 bg-gray-100">
+                <div class="nav flex flex-row items-center mt-1 p-2">
+                    <div class="text-xl font-bold">
+                        FlixTube
+                    </div>
+                    <div class="ml-16">
+                        <a href="/">Videos</a>
+                    </div>
+                    <div class="ml-4">
+                        <a href="/upload">Upload</a>
+                    </div>
+                    <div class="ml-4 border-b-2 border-blue-600">
+                        <a href="/history">History</a>
+                    </div>
+                    <div class="ml-4">
+                        <a href="/ads">Advertise</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="m-4">
+	            <h1>Sponsored Ads</h1>
+                div class="ads-list">
+        {{#each ads}}
+        <div class="ad-item">
+            <a href="{{this.url}}" target="_blank">
+                <img src="{{this.image}}" alt="{{this.name}}">
+                <p>{{this.name}}</p>
+            </a>
+        </div>
+        {{/each}}
+    </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<style>
+    .ads-container {
+        text-align: center;
+        margin: 20px;
+    }
+    .ads-list {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    .ad-item img {
+        width: 100px;
+        height: auto;
+        border-radius: 10px;
+    }
+    .ad-item p {
+        margin-top: 5px;
+    }
+</style>

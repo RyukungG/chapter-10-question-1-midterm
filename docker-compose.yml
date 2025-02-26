@@ -185,3 +185,19 @@ services:
       - db
       - rabbit
     restart: "no"
+
+  advertise:
+    image: advertise
+    build: 
+      context: ./advertise
+      dockerfile: Dockerfile
+    container_name: advertise
+    volumes:
+      - /tmp/advertise/npm-cache:/root/.npm:z
+      - ./advertise/src:/usr/src/app/src:z
+      - ./advertise/images:/usr/src/app/images:z
+    ports:
+      - "4007:80"
+    environment:
+      - PORT=80
+    restart: "no"

@@ -20,7 +20,7 @@ spec:
     spec:
       containers: 
       - name: metadata
-        image: $CONTAINER_REGISTRY/metadata:$VERSION
+        image: flixtubemidtermpakorn.azurecr.io/metadata:$VERSION
         imagePullPolicy: IfNotPresent
         env:
         - name: PORT

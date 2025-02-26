@@ -14,9 +14,9 @@
 #
 
 set -u # or set -o nounset
-: "$CONTAINER_REGISTRY"
+: "flixtubemidtermpakorn.azurecr.io"
 : "$VERSION"
 : "$NAME"
 : "$DIRECTORY"
 
-docker build -t $CONTAINER_REGISTRY/$NAME:$VERSION --file ./$DIRECTORY/Dockerfile-prod ./$DIRECTORY
+docker build -t flixtubemidtermpakorn.azurecr.io/$NAME:$VERSION --file ./$DIRECTORY/Dockerfile-prod ./$DIRECTORY

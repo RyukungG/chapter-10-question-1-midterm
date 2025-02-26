@@ -69,6 +69,14 @@ async function main() {
         res.render("history", { videos: historyResponse.data.history });
     });
 
+    app.get("/ads", async (req, res) => {
+        // Fetch the ads data from the advertise microservice
+        const adsResponse = await axios.get("http://advertise/ads");
+
+        // Renders the ads for display in the browser
+        res.render("ads", { ads: adsResponse.data });
+    });
+
     //
     // HTTP GET route that streams video to the user's browser.
     //

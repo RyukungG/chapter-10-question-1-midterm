@@ -20,7 +20,7 @@ spec:
     spec:
       containers: 
       - name: gateway
-        image: $CONTAINER_REGISTRY/gateway:$VERSION
+        image: flixtubemidtermpakorn.azurecr.io/gateway:$VERSION
         imagePullPolicy: IfNotPresent
         env:
         - name: PORT

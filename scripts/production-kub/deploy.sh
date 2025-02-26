@@ -6,32 +6,32 @@
 #   ./scripts/production-kub/deploy.sh
 #
 
-set -u # or set -o nounset
-: "$CONTAINER_REGISTRY"
+# set -u # or set -o nounset
+# : "flixtubemidtermpakorn.azurecr.io"
 
-#
-# Build Docker images.
-#
-docker build -t $CONTAINER_REGISTRY/metadata:1 --file ../../metadata/Dockerfile-prod ../../metadata
-docker push $CONTAINER_REGISTRY/metadata:1
+# #
+# # Build Docker images.
+# #
+# docker build -t flixtubemidtermpakorn.azurecr.io/metadata:1 --file ../../metadata/Dockerfile-prod ../../metadata
+# docker push flixtubemidtermpakorn.azurecr.io/metadata:1
 
-docker build -t $CONTAINER_REGISTRY/history:1 --file ../../history/Dockerfile-prod ../../history
-docker push $CONTAINER_REGISTRY/history:1
+# docker build -t flixtubemidtermpakorn.azurecr.io/history:1 --file ../../history/Dockerfile-prod ../../history
+# docker push flixtubemidtermpakorn.azurecr.io/history:1
 
-docker build -t $CONTAINER_REGISTRY/mock-storage:1 --file ../../mock-storage/Dockerfile-prod ../../mock-storage
-docker push $CONTAINER_REGISTRY/mock-storage:1
+# docker build -t flixtubemidtermpakorn.azurecr.io/mock-storage:1 --file ../../mock-storage/Dockerfile-prod ../../mock-storage
+# docker push flixtubemidtermpakorn.azurecr.io/mock-storage:1
 
-docker build -t $CONTAINER_REGISTRY/history:1 --file ../../history/Dockerfile-prod ../../history
-docker push $CONTAINER_REGISTRY/history:1
+# docker build -t flixtubemidtermpakorn.azurecr.io/history:1 --file ../../history/Dockerfile-prod ../../history
+# docker push flixtubemidtermpakorn.azurecr.io/history:1
 
-docker build -t $CONTAINER_REGISTRY/video-streaming:1 --file ../../video-streaming/Dockerfile-prod ../../video-streaming
-docker push $CONTAINER_REGISTRY/video-streaming:1
+# docker build -t flixtubemidtermpakorn.azurecr.io/video-streaming:1 --file ../../video-streaming/Dockerfile-prod ../../video-streaming
+# docker push flixtubemidtermpakorn.azurecr.io/video-streaming:1
 
-docker build -t $CONTAINER_REGISTRY/video-upload:1 --file ../../video-upload/Dockerfile-prod ../../video-upload
-docker push $CONTAINER_REGISTRY/video-upload:1
+# docker build -t flixtubemidtermpakorn.azurecr.io/video-upload:1 --file ../../video-upload/Dockerfile-prod ../../video-upload
+# docker push flixtubemidtermpakorn.azurecr.io/video-upload:1
 
-docker build -t $CONTAINER_REGISTRY/gateway:1 --file ../../gateway/Dockerfile-prod ../../gateway
-docker push $CONTAINER_REGISTRY/gateway:1
+# docker build -t flixtubemidtermpakorn.azurecr.io/gateway:1 --file ../../gateway/Dockerfile-prod ../../gateway
+# docker push flixtubemidtermpakorn.azurecr.io/gateway:1
 
 # 
 # Deploy containers to Kubernetes.

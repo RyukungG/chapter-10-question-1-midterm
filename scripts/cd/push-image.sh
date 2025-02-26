@@ -14,11 +14,11 @@
 #
 
 set -u # or set -o nounset
-: "$CONTAINER_REGISTRY"
+: "flixtubemidtermpakorn.azurecr.io"
 : "$VERSION"
 : "$REGISTRY_UN"
 : "$REGISTRY_PW"
 : "$NAME"
 
-echo $REGISTRY_PW | docker login $CONTAINER_REGISTRY --username $REGISTRY_UN --password-stdin
-docker push $CONTAINER_REGISTRY/$NAME:$VERSION
+echo $REGISTRY_PW | docker login flixtubemidtermpakorn.azurecr.io --username $REGISTRY_UN --password-stdin
+docker push flixtubemidtermpakorn.azurecr.io/$NAME:$VERSION

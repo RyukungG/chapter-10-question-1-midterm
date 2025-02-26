@@ -20,7 +20,7 @@ spec:
     spec:
       containers: 
       - name: video-storage
-        image: $CONTAINER_REGISTRY/mock-storage:1
+        image: flixtubemidtermpakorn.azurecr.io/mock-storage
         imagePullPolicy: IfNotPresent
         env:
         - name: PORT

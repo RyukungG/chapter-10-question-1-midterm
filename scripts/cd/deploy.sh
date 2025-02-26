@@ -15,7 +15,7 @@
 #
 
 set -u # or set -o nounset
-: "$CONTAINER_REGISTRY"
+: "flixtubemidtermpakorn.azurecr.io"
 : "$NAME"
 : "$VERSION"
 

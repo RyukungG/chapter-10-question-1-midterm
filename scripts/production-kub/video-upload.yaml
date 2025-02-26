@@ -20,7 +20,7 @@ spec:
     spec:
       containers: 
       - name: video-upload
-        image: $CONTAINER_REGISTRY/video-upload:1
+        image: flixtubemidtermpakorn.azurecr.io/video-upload
         imagePullPolicy: IfNotPresent
         env:
         - name: PORT

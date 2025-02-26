@@ -2,14 +2,14 @@ version: '3'
 services:
 
   db:
-    image: mongo:7.0.0
+    image: flixtubemidtermpakorn.azurecr.io/mongo:7.0.0
     container_name: db
     ports:
       - "27017:27017"
     restart: always
 
   rabbit:
-    image: rabbitmq:3.12.4-management
+    image: flixtubemidtermpakorn.azurecr.io/rabbitmq:3.12.4-management
     container_name: rabbit
     ports:
       - "5672:5672"
@@ -21,7 +21,7 @@ services:
 
   # Service for loading database fixtures.
   db-fixture-rest-api:
-    image: db-fixture-rest-api
+    image: flixtubemidtermpakorn.azurecr.io/db-fixture-rest-api
     build: 
       context: ./db-fixture-rest-api
       dockerfile: Dockerfile
@@ -39,7 +39,7 @@ services:
     restart: always
 
   gateway:
-    image: gateway
+    image: flixtubemidtermpakorn.azurecr.io/gateway
     build: 
       context: ./gateway
       dockerfile: Dockerfile-dev
@@ -59,7 +59,7 @@ services:
     restart: "no"
 
   video-streaming:
-    image: video-streaming
+    image: flixtubemidtermpakorn.azurecr.io/video-streaming
     build: 
       context: ./video-streaming
       dockerfile: Dockerfile-dev
@@ -79,7 +79,7 @@ services:
     restart: "no"
 
   video-upload:
-    image: video-upload
+    image: flixtubemidtermpakorn.azurecr.io/video-upload
     build: 
       context: ./video-upload
       dockerfile: Dockerfile-dev
@@ -99,7 +99,7 @@ services:
     restart: "no"
 
   history:
-    image: history
+    image: flixtubemidtermpakorn.azurecr.io/history
     build: 
       context: ./history
       dockerfile: Dockerfile-dev
@@ -124,7 +124,7 @@ services:
   # Uncomment this service to enable cloud storage.
   #
   # video-storage:
-  #   image: azure-storage
+  #   image: flixtubemidtermpakorn.azurecr.io/azure-storage
   #   build: 
   #     context: ./azure-storage
   #     dockerfile: Dockerfile-dev
@@ -149,7 +149,7 @@ services:
   # local testing easier.
   #
   video-storage:
-    image: mock-storage
+    image: flixtubemidtermpakorn.azurecr.io/mock-storage
     build: 
       context: ./mock-storage
       dockerfile: Dockerfile-dev
@@ -165,7 +165,7 @@ services:
     restart: "no"
 
   metadata:
-    image: metadata
+    image: flixtubemidtermpakorn.azurecr.io/metadata
     build: 
       context: ./metadata
       dockerfile: Dockerfile-dev
@@ -187,10 +187,10 @@ services:
     restart: "no"
 
   advertise:
-    image: advertise
+    image: flixtubemidtermpakorn.azurecr.io/advertise
     build: 
       context: ./advertise
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile-dev
     container_name: advertise
     volumes:
       - /tmp/advertise/npm-cache:/root/.npm:z

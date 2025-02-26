@@ -20,7 +20,7 @@ spec:
     spec:
       containers: 
       - name: history
-        image: $CONTAINER_REGISTRY/history:$VERSION
+        image: flixtubemidtermpakorn.azurecr.io/history:$VERSION
         imagePullPolicy: IfNotPresent
         env:
         - name: PORT

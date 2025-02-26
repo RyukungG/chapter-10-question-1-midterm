@@ -7,38 +7,34 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: history
+  name: advertise
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: history
+      app: advertise
   template:
     metadata:
       labels:
-        app: history
+        app: advertise
     spec:
       containers: 
-      - name: history
-        image: flixtubemidtermpakorn.azurecr.io/history
-        imagePullPolicy: IfNotPresent
+      - name: advertise
+        image: advertise:1
+        imagePullPolicy: Never
         env:
         - name: PORT
           value: "4000"
-        - name: DBHOST
-          value: mongodb://mongodb:27017
-        - name: DBNAME
-          value: history
         - name: RABBIT
           value: amqp://test:test@rabbit:5672
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: history
+  name: advertise
 spec:
   selector:
-    app: history
+    app: advertise
   type: ClusterIP
   ports:
     - protocol: TCP
